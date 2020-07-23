@@ -1,8 +1,12 @@
+var socket;
+
 function setup() {
 	createCanvas(400, 400);
-	background(90);
+
+	socket = io.connect('http://localhost:3000');
 }
 
 function draw() {
-	console.log("Hello World");
+	background(51);
+	ellipse(mouseX, mouseY, 60, 60);
 }
