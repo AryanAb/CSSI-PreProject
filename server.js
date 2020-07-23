@@ -12,5 +12,9 @@ server = app.listen(3000, () => {
 var io = socket(server);
 
 io.sockets.on('connection', socket => {
-	console.log(socket.id);
-})
+
+	socket.on('position', data => {
+		socket.broadcast.emit('position', data);
+	});
+
+});
